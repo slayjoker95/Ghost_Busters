@@ -9,7 +9,7 @@ public class Hunter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hunter_id")
-    private Long hunter_id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -30,11 +30,11 @@ public class Hunter {
     }
 
     public Long getHunter_id() {
-        return hunter_id;
+        return id;
     }
 
     public void setHunter_id(Long hunter_id) {
-        this.hunter_id = hunter_id;
+        this.id = hunter_id;
     }
 
     public String getName() {

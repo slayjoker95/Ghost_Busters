@@ -18,7 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 @RequestMapping("/api/user")
-public class CuisineRestController {
+public class UserRestController {
     @Autowired
     private UserService userService;
 

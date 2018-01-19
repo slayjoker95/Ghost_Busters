@@ -11,7 +11,7 @@ public class Prison {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "prison_id")
-    private Long prison_id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name="order_id")
@@ -25,11 +25,11 @@ public class Prison {
     }
 
     public Long getPrison_id() {
-        return prison_id;
+        return id;
     }
 
     public void setPrison_id(Long prison_id) {
-        this.prison_id = prison_id;
+        this.id = prison_id;
     }
 
     public Order getOrder() {

@@ -6,16 +6,15 @@ import com.ghost.busters.user.model.User;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "z_order")
 public class Order {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id")
-    private Long order_id;
+    private Long id;
 
     @Column(name="ghost_lvl")
-    private Integer ghost_lvl;
+    private Long ghost_lvl;
 
     @Column(name="status")
     private String status;
@@ -37,7 +36,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer ghost_lvl, String status, String adress, String equip_st, User user, Hunter hunter) {
+    public Order(Long ghost_lvl, String status, String adress, String equip_st, User user, Hunter hunter) {
         this.ghost_lvl = ghost_lvl;
         this.status = status;
         this.adress = adress;
@@ -47,18 +46,18 @@ public class Order {
     }
 
     public Long getOrder_id() {
-        return order_id;
+        return id;
     }
 
     public void setOrder_id(Long order_id) {
-        this.order_id = order_id;
+        this.id = order_id;
     }
 
-    public Integer getGhost_lvl() {
+    public Long getGhost_lvl() {
         return ghost_lvl;
     }
 
-    public void setGhost_lvl(Integer ghost_lvl) {
+    public void setGhost_lvl(Long ghost_lvl) {
         this.ghost_lvl = ghost_lvl;
     }
 
