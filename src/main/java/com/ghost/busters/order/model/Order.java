@@ -1,6 +1,8 @@
 package com.ghost.busters.order.model;
 
+import com.ghost.busters.equip_status.model.EquipStatus;
 import com.ghost.busters.hunter.model.Hunter;
+import com.ghost.busters.o_status.model.OrderStatus;
 import com.ghost.busters.user.model.User;
 
 import javax.persistence.*;
@@ -16,14 +18,16 @@ public class Order {
     @Column(name="ghost_lvl")
     private Long ghost_lvl;
 
-    @Column(name="status")
-    private String status;
+    @ManyToOne
+    @JoinColumn(name="o_status_id")
+    private OrderStatus orderStatus;
 
     @Column(name="adress")
     private String adress;
 
-    @Column(name="equip_st")
-    private String equip_st;
+    @ManyToOne
+    @JoinColumn(name="e_status_id")
+    private EquipStatus equipStatus;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -36,21 +40,21 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long ghost_lvl, String status, String adress, String equip_st, User user, Hunter hunter) {
+    public Order(Long ghost_lvl, OrderStatus orderStatus, String adress, EquipStatus equipStatus, User user, Hunter hunter) {
         this.ghost_lvl = ghost_lvl;
-        this.status = status;
+        this.orderStatus = orderStatus;
         this.adress = adress;
-        this.equip_st = equip_st;
+        this.equipStatus = equipStatus;
         this.user = user;
         this.hunter = hunter;
     }
 
-    public Long getOrder_id() {
+    public Long getId() {
         return id;
     }
 
-    public void setOrder_id(Long order_id) {
-        this.id = order_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getGhost_lvl() {
@@ -61,12 +65,12 @@ public class Order {
         this.ghost_lvl = ghost_lvl;
     }
 
-    public String getStatus() {
-        return status;
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     public String getAdress() {
@@ -77,12 +81,12 @@ public class Order {
         this.adress = adress;
     }
 
-    public String getEquip_st() {
-        return equip_st;
+    public EquipStatus getEquipStatus() {
+        return equipStatus;
     }
 
-    public void setEquip_st(String equip_st) {
-        this.equip_st = equip_st;
+    public void setEquipStatus(EquipStatus equipStatus) {
+        this.equipStatus = equipStatus;
     }
 
     public User getUser() {

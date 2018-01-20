@@ -34,11 +34,11 @@ public class OrderService {
 
     public void update(Order newOrder)
     {
-        Order order = orderRepository.findOne(newOrder.getOrder_id());
+        Order order = orderRepository.findOne(newOrder.getId());
         order.setGhost_lvl(newOrder.getGhost_lvl());
-        order.setStatus(newOrder.getStatus());
+        order.setOrderStatus(newOrder.getOrderStatus());
         order.setAdress(newOrder.getAdress());
-        order.setEquip_st(newOrder.getEquip_st());
+        order.setEquipStatus(newOrder.getEquipStatus());
         order.setUser(newOrder.getUser());
         order.setHunter(newOrder.getHunter());
         orderRepository.flush();
