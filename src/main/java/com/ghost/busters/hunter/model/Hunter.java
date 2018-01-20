@@ -14,6 +14,9 @@ public class Hunter {
     @Column(name = "name")
     private String name;
 
+    @Column(name="password")
+    private String password;
+
     @Column(name="level")
     private Integer level;
 
@@ -23,10 +26,20 @@ public class Hunter {
     public Hunter() {
     }
 
-    public Hunter(String name, Integer level, Boolean busy) {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Hunter(String name, Integer level, Boolean busy, String password) {
         this.name = name;
         this.level = level;
         this.busy = busy;
+        this.password = password;
+
     }
 
     public Long getHunter_id() {

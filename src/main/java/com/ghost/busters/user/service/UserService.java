@@ -39,6 +39,7 @@ public class UserService {
         User user = userRepository.findOne(newUser.getUser_id());
         user.setName(newUser.getName());
         user.setRole(newUser.getRole());
+        user.setPassword(newUser.getPassword());
         userRepository.flush();
     }
 

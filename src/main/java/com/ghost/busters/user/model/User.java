@@ -14,15 +14,28 @@ public class User {
     @Column(name="name")
     private String name;
 
+    @Column(name="password")
+    private String password;
+
     @Column(name="role")
     private String role;
 
     public User() {
     }
 
-    public User(String name, String role) {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User(String name, String role, String password) {
         this.name = name;
         this.role = role;
+        this.password = password;
+
     }
 
     public Long getUser_id() {

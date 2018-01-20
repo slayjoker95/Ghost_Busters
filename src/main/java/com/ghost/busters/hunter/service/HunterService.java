@@ -37,6 +37,7 @@ public class HunterService {
     {
         Hunter hunter = hunterRepository.findOne(newHunter.getHunter_id());
         hunter.setName(newHunter.getName());
+        hunter.setPassword(newHunter.getPassword());
         hunter.setLevel(newHunter.getLevel());
         hunter.setBusy(newHunter.getBusy());
         hunterRepository.flush();
