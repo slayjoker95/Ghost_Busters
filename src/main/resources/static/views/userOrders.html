@@ -1,0 +1,21 @@
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Уровень привидения</th>
+            <th>Адрес</th>
+            <th width="100"></th>
+            <th width="100"></th>
+            <th width="100"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in ownOrders">
+            <td ng-click="setSelectedOrder(order)">{{ order.id }}</td>
+            <td ng-click="setSelectedOrder(order)">{{ order.ghost_lvl }}</td>
+            <td ng-click="setSelectedOrder(order)">{{ order.adress }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

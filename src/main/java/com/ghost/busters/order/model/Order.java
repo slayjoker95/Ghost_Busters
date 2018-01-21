@@ -40,8 +40,8 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long ghost_lvl, OrderStatus orderStatus, String adress, EquipStatus equipStatus, User user, Hunter hunter) {
-        this.ghost_lvl = ghost_lvl;
+    public Order(String ghost_lvl, OrderStatus orderStatus, String adress, EquipStatus equipStatus, User user, Hunter hunter) {
+        this.ghost_lvl = Long.valueOf(ghost_lvl);
         this.orderStatus = orderStatus;
         this.adress = adress;
         this.equipStatus = equipStatus;

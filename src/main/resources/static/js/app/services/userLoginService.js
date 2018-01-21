@@ -16,14 +16,14 @@ servicesModule.service('UserLoginService', function($http, $rootScope, SERVER_UR
                 if (usr.name === user.name && usr.password === user.password) {
                     console.log("User matches!!!");
                     if (usr.role == 'Диспетчер')
-                        $rootScope.disp = user;
+                        $rootScope.disp = usr;
                     else
                     {
                         if (usr.role == 'Пользователь')
-                            $rootScope.user = user;
+                            $rootScope.user = usr;
                         else {
                             if (usr.role == 'Поставщик')
-                                $rootScope.equip = user;
+                                $rootScope.equip = usr;
                                 }
                     }
                     resp = {success: true};

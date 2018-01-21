@@ -1,0 +1,21 @@
+<div class="header">
+    <h1>Заявка {{doneSelectedOrder.id}}</h1>
+</div>
+<div>
+    <h3>Уровень привидения: {{doneSelectedOrder.ghost_lvl}}</h3>
+</div>
+<div>
+    <h3>Адрес: {{doneSelectedOrder.adress}}</h3>
+</div>
+<div>
+    <h3>Статус: {{doneSelectedOrder.orderStatus.name}}</h3>
+</div>
+<div>
+    <h3>Статус экипировки: {{doneSelectedOrder.equipStatus.name}}</h3>
+</div>
+<div>
+    <button ng-click="updateDoneOrder()">OK</button>
+</div>
+<div>
+    <a href="#/doneOrders">Назад</a>
+</div>

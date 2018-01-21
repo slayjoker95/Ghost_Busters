@@ -1,0 +1,26 @@
+<div class="header">
+    <h1>Заявка {{equipSelectedOrder.id}}</h1>
+</div>
+<div>
+    <h3>Уровень привидения: {{equipSelectedOrder.ghost_lvl}}</h3>
+</div>
+<div>
+    <h3>Адрес: {{equipSelectedOrder.adress}}</h3>
+</div>
+<div>
+    <h3>Статус: {{equipSelectedOrder.orderStatus.name}}</h3>
+</div>
+<div>
+    <form  ng-submit="submit()">
+        <div class="updateStatus">
+            <label style="width: 100px; height: 25px;">Статус экипировки</label>
+            <select style="width: 300px; height: 25px;"  name="equipStatus"
+                    ng-model="equipSelectedOrder.equipStatus"
+                    ng-options="c.name for c in equipStatuses track by c.name" required>
+            </select>
+        </div>
+        <div>
+            <input class="btn btn-default" type="submit" id="submit" value="Изменить" />
+        </div>
+    </form>
+</div>
